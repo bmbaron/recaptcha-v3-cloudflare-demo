@@ -28,12 +28,12 @@
 						formData.append('g-recaptcha-response', `${token}`);
 						const formObject = Object.fromEntries(formData.entries());
 						console.log(JSON.stringify(formObject));
-						// fetch('/api/submit', {
-						// 	method: 'POST',
-						// 	body: formData,
-						// }).then(response => response.json())
-						// 	.then(data => console.log(data))
-						// 	.catch(error => console.error('Error:', error));
+						fetch('/api/submit', {
+							method: 'POST',
+							body: formData,
+						}).then(response => response.json())
+							.then(data => console.log(data))
+							.catch(error => console.error('Error:', error));
 					});
 				})
             }
